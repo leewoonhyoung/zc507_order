@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGWESS0702_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="order" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Prhid"/>
+                    <PropertyRef Name="Pntid"/>
+                    <PropertyRef Name="Empid"/>
+                </Key>
+                <Property Name="Prhid" Type="Edm.String" Nullable="false" MaxLength="14" sap:unicode="false" sap:label="구매오더코드" sap:creatable="true" sap:updatable="true" sap:sortable="false" sap:filterable="true"/>
+                <Property Name="Pntid" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="공장코드" sap:creatable="true" sap:updatable="true" sap:sortable="false" sap:filterable="true"/>
+                <Property Name="Pntnm" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="공장명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Empid" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="사원코드" sap:creatable="true" sap:updatable="true" sap:sortable="false" sap:filterable="true"/>
+                <Property Name="Empna" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="사원 이름" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="제목" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Prdat" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="발주일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Crtdm" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="문서생성일시" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Totlp" Type="Edm.Decimal" Nullable="false" Precision="14" Scale="3" sap:unicode="false" sap:unit="Currc" sap:label="총구매금액" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Currc" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="통화" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+                <Property Name="Odchk" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="담당자 승인 여부" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Icond" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Icon in text fields (substitute display, alias)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Dflag" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator: delete entry" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGWESS0702_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="orderSet" EntityType="ZGWESS0702_SRV.order" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://210.16.199.141:8001/sap/opu/odata/sap/ZGWESS0702_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://210.16.199.141:8001/sap/opu/odata/sap/ZGWESS0702_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

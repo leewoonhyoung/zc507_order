@@ -1,0 +1,70 @@
+<mvc:View  
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" 
+    xmlns:f="sap.f"
+    xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:sv="sap.ui.comp.smartvariants"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    controllerName="sync.zc507order.controller.View1"
+    xmlns:html="http://www.w3.org/1999/xhtml">
+    <Button text ="Made By"
+        press=".onShowHello">
+    </Button>
+
+    <f:DynamicPage showFooter="false">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <sv:SmartVariantManagement id="idSmartVariant"
+                    persistencyKey="SmartFilter_Variant"
+                    showShare="true"
+                    showExecuteOnSelection="true"
+                    />
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <smartFilterBar:SmartFilterBar id="idSmartFilterBar" useToolbar="false"
+                        smartVariant="idSmartVariant" entitySet="orderSet"
+                        enableBasicSearch="true" basicSearchFieldName="Prhid"
+                        persistencyKey="SmartFilter_Explored"/>
+
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+            <f:content>
+                <smartTable:SmartTable
+                    id="idSmartTable"
+                    entitySet="orderSet"
+                    smartFilterId="idSmartFilterBar"
+                    useExportToExcel="true"
+                    useVariantManagement="true"
+                    useTablePersonalisation="true"
+                    smartVariant="idSmartVariant"
+                    header="{i18n>ListHeaderTitle}"
+                    tableType="ResponsiveTable"
+                    enableAutoBinding="true"
+                    class="sapUiResponsiveContentPadding"
+                    showRowCount="true"
+                    demandPopin="true">
+
+                    <smartTable:customToolbar>
+                        <Toolbar>
+                            <ToolbarSpacer/>
+                            <Button icon="sap-icon://add" text="{i18n>btnNew}"
+                                    press="handleNew" type="Transparent"/>
+                            </Toolbar>
+                    </smartTable:customToolbar>
+
+                </smartTable:SmartTable>
+
+            </f:content>
+
+    </f:DynamicPage>
+    
+</mvc:View>

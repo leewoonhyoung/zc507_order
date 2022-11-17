@@ -1,0 +1,46 @@
+<mvc:View
+	controllerName="sync.zc507order.controller.Create"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:uxap="sap.uxap"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+    <uxap:ObjectPageLayout enableLazyLoading="true" showTitleInHeaderContent="true">
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="{i18n>newTitle}"
+                objectSubtitle="{i18n>newSubTitle}"
+                isObjectIconAlwaysVisible="false"
+                isObjectTitleAlwaysVisible="false"
+                isObjectSubtitleAlwaysVisible="false">
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection titleUppercase="false" title="{i18n>flightInfoInputTitle}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Info">
+                        <smartForm:SmartForm id="idForm" editable="true">
+                            <smartForm:Group label="ORDER">
+                                <smartForm:GroupElement>
+                                    <smartField:SmartField value="{Prhid}"/>
+                                </smartForm:GroupElement>
+                                <smartForm:GroupElement>
+                                    <smartField:SmartField value="{Pntid}"/>
+                                </smartForm:GroupElement>
+                                <smartForm:GroupElement>
+                                    <smartField:SmartField value="{Pntnm}"/>
+                                </smartForm:GroupElement>
+                            </smartForm:Group>
+                        </smartForm:SmartForm>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+    </uxap:ObjectPageLayout>
+
+</mvc:View>
